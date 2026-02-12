@@ -25,4 +25,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many  :user_skills, class_name: "UserSkill", foreign_key: "user_id", dependent: :destroy
+  has_many  :user_projects, class_name: "UserProject", foreign_key: "user_id", dependent: :destroy
+
+  has_many :skills, through: :user_skills, source: :skill
+  has_many :projects, through: :user_projects, source: :project
 end

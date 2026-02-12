@@ -21,4 +21,7 @@
 class UserProject < ApplicationRecord
   belongs_to :user
   belongs_to :project
+
+  belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
+  belongs_to :project, required: true, class_name: "Project", foreign_key: "project_id"
 end
