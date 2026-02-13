@@ -28,21 +28,21 @@ unless Rails.env.production?
         name = names.sample  # Fixed: changed Names.sample to names.sample
         email = "#{name}@example.com"
         user = User.find_by(email: email)
-        
+
         # Skip if user not found (just in case)
         next unless user
 
         # Use create! instead of find_or_create_by to allow duplicates
-        skill = Skill.create(  # Fixed: changed Skills to Skill (assuming model name)
-          name: Faker::Job.key_skill
-      
+        skill = Skill.create( # Fixed: changed Skills to Skill (assuming model name)
+          name: Faker::Job.key_skill,
+
         )
 
         user_skill = UserSkill.create(
           user: user,
-          skill: skill
+          skill: skill,
         )
-        
+
         # Optional: print progress every 10 skills
         puts "  Created skill #{skill.id} for #{user.email}" if (skill.id % 10 == 0)
       end
