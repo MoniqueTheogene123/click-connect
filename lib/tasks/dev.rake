@@ -24,7 +24,7 @@ unless Rails.env.production?
       end
 
       # Add skills (now allowing duplicates)
-      100.times do
+      10.times do
         name = names.sample  # Fixed: changed Names.sample to names.sample
         email = "#{name}@example.com"
         user = User.find_by(email: email)
@@ -34,8 +34,13 @@ unless Rails.env.production?
 
         # Use create! instead of find_or_create_by to allow duplicates
         skill = Skill.create(  # Fixed: changed Skills to Skill (assuming model name)
-          name: Faker::Job.key_skill,
-          user: user
+          name: Faker::Job.key_skill
+      
+        )
+
+        user_skill = UserSkill.create(
+          user: user,
+          skill: skill
         )
         
         # Optional: print progress every 10 skills
