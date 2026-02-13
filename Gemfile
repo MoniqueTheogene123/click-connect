@@ -21,6 +21,7 @@ gem "appdev_support"                  # Learning helpers (nicer error messages, 
 gem "ai-chat", "~> 0.5.4"             # AI::Chat integration via OpenAI APIs
 gem "carrierwave" # File upload and management
 gem "devise" # User authentication (sign up, sign in, etc.)
+gem "faker" # Generate fake data (names, emails, etc.)
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude" # Ruby debugger
