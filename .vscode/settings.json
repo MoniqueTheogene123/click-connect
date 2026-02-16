@@ -50,7 +50,7 @@
     "editor.formatOnSave": false
   },
   "[erb]": {
-    "editor.defaultFormatter": "jnbt.vscode-rufo",
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": false,
     "editor.autoClosingBrackets": "beforeWhitespace"
   },
