@@ -31,4 +31,11 @@ class User < ApplicationRecord
 
   has_many :skills, through: :user_skills, source: :skill
   has_many :projects, through: :user_projects, source: :project
+
+  scope :with_skill, ->(skill) { joins(:skills).where(skills: { id: skill.id }) }
+  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end

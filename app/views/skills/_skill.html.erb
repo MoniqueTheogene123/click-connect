@@ -4,4 +4,10 @@
     <%= skill.name %>
   </p>
 
+  <% User.with_skill(skill).each do |user| %>
+    <p><%= "View #{user.full_name}'s Profile" %><p>
+    <%# TODO: link to user profile page once implemented %>
+    <%# link_to "View #{user.first_name}'s Profile", profile_path(user) %>
+  <% end %>
+
 </div>
