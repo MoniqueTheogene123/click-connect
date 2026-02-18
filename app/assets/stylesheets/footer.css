@@ -10,7 +10,7 @@
 .footer .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: rgb(42, 42, 202);
 }
 
 .footer .logo i {
@@ -23,18 +23,7 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
-.footer .custom-domain i {
-    color: #ffc107;
-    margin-right: 0.5rem;
-}
 
-.footer .custom-domain a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-}
 
 .footer .custom-domain a:hover {
     color: #ffc107;
@@ -55,41 +44,4 @@
 
 .footer-links .fa-linkedin {
     font-size: 1.3rem;
-}
-
-/* Add these for extra footer sections if needed */
-.footer-bottom {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-bottom a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    color: #ffc107;
-    text-decoration: underline;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .footer .row > div {
-        text-align: center !important;
-        margin-bottom: 1.5rem;
-    }
-    
-    .footer-links {
-        text-align: center;
-    }
-    
-    .footer-links a {
-        display: inline-block;
-        margin: 0 0.5rem;
-    }
 }
