@@ -1,4 +1,5 @@
- 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -428,7 +429,9 @@
         </div>
         <div class="user-badge">
             <i class="fas fa-circle-user"></i>
-            <span><strong>Alex Morgan</strong> (you) · frontend</span>
+            <span> <div class="dashboard">
+                <strong>Welcome, <%= @user.first_name %></strong>
+                </span>
         </div>
     </div>
 
