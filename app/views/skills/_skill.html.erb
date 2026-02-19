@@ -1,7 +1,7 @@
 <div id="<%= dom_id skill %>">
   <p>
     <strong>Name:</strong>
-    <%= skill.name %>
+    <%= skill.name.titleize %>
   </p>
 
   <% User.with_skill(skill).each do |user| %>
