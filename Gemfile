@@ -22,6 +22,7 @@ gem "ai-chat", "~> 0.5.4"             # AI::Chat integration via OpenAI APIs
 gem "carrierwave" # File upload and management
 gem "devise" # User authentication (sign up, sign in, etc.)
 gem "faker" # Generate fake data (names, emails, etc.)
+gem "pg_search" # Full-text search with PostgreSQL
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude" # Ruby debugger
@@ -43,8 +44,6 @@ group :development do
   gem "rails-erd"                     # Generate ER diagrams
   gem "rufo"                          # Ruby code formatter
   gem "web-console"                   # Console on exception pages
-  gem "annotaterb"
-  gem "better_errors"
 end
 
 group :test do
