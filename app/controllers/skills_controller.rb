@@ -3,7 +3,8 @@ class SkillsController < ApplicationController
 
   # GET /skills
   def index
-    @skills = Skill.all
+    @q = Skill.ransack(params[:q])
+    @skills = @q.result
   end
 
   # GET /skills/1
@@ -46,13 +47,14 @@ class SkillsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_skill
-      @skill = Skill.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def skill_params
-      params.expect(skill: [ :name ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_skill
+    @skill = Skill.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def skill_params
+    params.expect(skill: [:name])
+  end
 end
