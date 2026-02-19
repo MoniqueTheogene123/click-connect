@@ -40,6 +40,14 @@ class SkillsController < ApplicationController
     end
   end
 
+    # Show breadcrumbs for skills
+  def show
+    @breadcrumbs = [
+      {content: "Skills", href: skills_path},
+      {content: @skill.name}
+    ]
+  end
+
   # DELETE /skills/1
   def destroy
     @skill.destroy!
