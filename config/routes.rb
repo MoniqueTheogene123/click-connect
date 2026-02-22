@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   patch("/skills/:id", { :controller => "skills", :action => "update" })
   delete("/skills/:id", { :controller => "skills", :action => "destroy" })
 
+  get("/user_skills/:id", { :controller => "user_skills", :action => "show" })
+
   # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
   # get("/your_first_screen", { :controller => "pages", :action => "first" })
 end
