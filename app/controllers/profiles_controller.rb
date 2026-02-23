@@ -6,9 +6,6 @@ class ProfilesController < ApplicationController
     # Fetch all profiles from database
     @users = User.all  # Or @profiles = Profile.all depending on your model
 
-    # If you want to include related data
-    @users = User.includes(:experiences, :educations).all
-
     # If you need pagination (recommended for many profiles)
     @users = User.page(params[:page]).per(20)
   end

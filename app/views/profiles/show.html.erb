@@ -12,8 +12,6 @@
   </ul>
 </div>
 
-
-
 <div class="profile-header">
   <div class="profile-cover">
     <% if @user.cover_image_url.present? %>
@@ -74,60 +72,7 @@
   <%# Left Column %>
   <div class="profile-left-column">
     
-    <%# Experience Section %>
-    <div class="profile-section">
-      <h2>Experience</h2>
-      <% if @user.experiences.present? && @user.experiences.any? %>
-        <div class="experience-list">
-          <% @user.experiences.each do |exp| %>
-            <div class="experience-item">
-              <h3><%= exp.position %></h3>
-              <p class="company"><%= exp.company_name %></p>
-              <p class="date-range">
-                <%= exp.start_date.strftime("%B %Y") %> - 
-                <% if exp.is_current %>
-                  Present
-                <% else %>
-                  <%= exp.end_date.strftime("%B %Y") %>
-                <% end %>
-              </p>
-              <% if exp.description.present? %>
-                <p class="description"><%= exp.description %></p>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <p class="no-data">No experience listed.</p>
-      <% end %>
-    </div>
     
-    <%# Education Section %>
-    <div class="profile-section">
-      <h2>Education</h2>
-      <% if @user.educations.present? && @user.educations.any? %>
-        <div class="education-list">
-          <% @user.educations.each do |edu| %>
-            <div class="education-item">
-              <h3><%= edu.degree %> in <%= edu.field_of_study %></h3>
-              <p class="institution"><%= edu.institution %></p>
-              <p class="date-range">
-                <%= edu.start_date.strftime("%Y") %> - 
-                <%= edu.end_date.strftime("%Y") %>
-              </p>
-              <% if edu.description.present? %>
-                <p class="description"><%= edu.description %></p>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <p class="no-data">No education listed.</p>
-      <% end %>
-    </div>
-    
-  </div>
-  
   <%# Right Column %>
   <div class="profile-right-column">
     
@@ -144,36 +89,7 @@
         <p class="no-data">No skills listed.</p>
       <% end %>
     </div>
-    
-    <%# Interests/Hobbies %>
-    <div class="profile-section">
-      <h2>Interests</h2>
-      <% if @user.interests.present? && @user.interests.any? %>
-        <div class="interests-list">
-          <% @user.interests.each do |interest| %>
-            <span class="interest-tag"><%= interest %></span>
-          <% end %>
-        </div>
-      <% else %>
-        <p class="no-data">No interests listed.</p>
-      <% end %>
-    </div>
-    
-    <%# Social Links %>
-    <div class="profile-section">
-      <h2>Social Links</h2>
-      <% if @user.social_links.present? && @user.social_links.any? %>
-        <div class="social-links">
-          <% @user.social_links.each do |platform, link| %>
-            <%= link_to link, target: "_blank", class: "social-link" do %>
-              <i class="fab fa-<%= platform %>"></i> <%= platform.titleize %>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <p class="no-data">No social links provided.</p>
-      <% end %>
-    </div>
+  
     
   </div>
 </div>
