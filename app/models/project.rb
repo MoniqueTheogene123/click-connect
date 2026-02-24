@@ -16,7 +16,7 @@ class Project < ApplicationRecord
     "#{title}"
   end
 
-    def to_u
+  def to_u
     "#{description}"
   end
 end

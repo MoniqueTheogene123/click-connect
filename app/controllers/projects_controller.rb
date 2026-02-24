@@ -8,10 +8,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
+    @projects = Project.all
     @breadcrumbs = [
-      {content: "Projects", href: projects_path},
-      {content: @project.to_t},
-      {content: @project.to_u},
+      { content: "Projects", href: projects_path },
+      { content: @project.to_t, href: project_path(@project) },
+      { content: @project.to_u },
     ]
   end
 
@@ -22,6 +23,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @breadcrumbs = [
+      { content: "Projects", href: projects_path },
+      { content: @project.to_u, href: project_path(@project) },
+      { content: "Edit" },
+    ]
   end
 
   # POST /projects
@@ -51,13 +57,14 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def project_params
-      params.expect(project: [ :title, :description ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def project_params
+    params.expect(project: [:title, :description])
+  end
 end
