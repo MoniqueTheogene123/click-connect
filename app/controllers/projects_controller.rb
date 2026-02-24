@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   def index
     @projects = Project.all
+
+    @breadcrumbs = [
+      { content: "Projects", href: projects_path }
+    ]
   end
 
   # GET /projects/1
@@ -11,8 +15,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @breadcrumbs = [
       { content: "Projects", href: projects_path },
-      { content: @project.to_t, href: project_path(@project) },
-      { content: @project.to_u },
+      { content: @project.title, href: project_path(@project) }
     ]
   end
 
@@ -25,7 +28,7 @@ class ProjectsController < ApplicationController
   def edit
     @breadcrumbs = [
       { content: "Projects", href: projects_path },
-      { content: @project.to_u, href: project_path(@project) },
+      { content: @project.title, href: project_path(@project) },
       { content: "Edit" },
     ]
   end

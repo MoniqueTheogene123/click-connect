@@ -21,6 +21,6 @@ class Skill < ApplicationRecord
   end
 
   def to_s
-    "#{name} #{skill} #{profile}"
+    "#{name}"
   end
 end

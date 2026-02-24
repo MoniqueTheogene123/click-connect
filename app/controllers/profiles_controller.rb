@@ -8,11 +8,19 @@ class ProfilesController < ApplicationController
 
     # If you need pagination (recommended for many profiles)
     @users = User.page(params[:page]).per(20)
+
+    @breadcrumbs = [
+      { content: "Profiles", href: profiles_path }
+    ]
   end
 
   # GET /profiles/1
   def show
     @users = User.page(params[:page]).per(20)
+    @breadcrumbs = [
+      { content: "Profiles", href: profiles_path },
+      { content: @user.full_name, href: profile_path(@user) },
+    ]
   end
 
   private

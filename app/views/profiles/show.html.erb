@@ -1,65 +1,24 @@
-<%= render "profile", user: @user %>
-
 <%# app/views/profiles/show.html.erb %>
-
-<div id="profiles">
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to "#{user.full_name}", profile_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
 <div class="profile-header">
-  <div class="profile-cover">
-    <% if @user.cover_image_url.present? %>
-      <%= image_tag @user.cover_image_url, alt: "Cover image", class: "cover-img" %>
-    <% else %>
-      <div class="cover-placeholder"></div>
-    <% end %>
-  </div>
-  
   <div class="profile-header-content">
     <div class="profile-avatar-large">
-      <% if @user.avatar_url.present? %>
-        <%= image_tag @user.avatar_url, alt: @user.display_name, class: "avatar-large-img" %>
+      <% if @user.profile_image_url.present? %>
+        <%= image_tag @user.profile_image_url, alt: @user.full_name, class: "avatar-large-img" %>
       <% else %>
         <div class="avatar-large-placeholder">
-          <%= @user.display_name&.first || @user.username&.first || "U" %>
+          <%= @user.full_name&.first || @user.username&.first || "U" %>
         </div>
       <% end %>
     </div>
     
     <div class="profile-title-info">
-      <h1><%= @user.display_name || @user.username %></h1>
-      
-      <% if @user.location.present? %>
-        <p class="location">
-          <i class="fas fa-map-marker-alt"></i> <%= @user.location %>
-        </p>
-      <% end %>
-      
-      <% if @user.website_url.present? %>
-        <p class="website">
-          <i class="fas fa-link"></i> 
-          <%= link_to @user.website_url, @user.website_url, target: "_blank" %>
-        </p>
-      <% end %>
+      <h1><%= @user.full_name || @user.username %></h1>
       
       <p class="join-date">
         <i class="fas fa-calendar"></i> 
-        Joined <%= @user.join_date&.strftime("%B %Y") || @user.created_at.strftime("%B %Y") %>
+        Joined <%= @user.created_at.strftime("%B %Y") %>
       </p>
     </div>
-    
-    <% if user_signed_in? && current_user != @user %>
-      <div class="profile-actions">
-        <%= button_to "Follow", follow_profile_path(@user), class: "btn btn-primary" %>
-        <%= button_to "Message", new_message_path(recipient: @user), class: "btn btn-secondary" %>
-      </div>
-    <% end %>
   </div>
 </div>
 
@@ -80,11 +39,13 @@
     <div class="profile-section">
       <h2>Skills</h2>
       <% if @user.skills.present? && @user.skills.any? %>
-        <div class="skills-cloud">
+        <ul>
           <% @user.skills.each do |skill| %>
-            <span class="skill-tag-large"><%= skill %></span>
+            <li>
+              <%= link_to skill.name.titleize, skill_path(skill) %>  
+            </li>
           <% end %>
-        </div>
+        </ul>
       <% else %>
         <p class="no-data">No skills listed.</p>
       <% end %>
