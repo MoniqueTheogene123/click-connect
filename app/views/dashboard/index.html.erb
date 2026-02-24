@@ -443,31 +443,15 @@
  <table class="table">
   <thead>
     <tr>
-      <th scope="col">count-pill</th>
-      <th scope="col">Python</th>
-      <th scope="col">Ruby</th>
-      <th scope="col">Typing</th>
+      <th scope="col">Skills</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>John</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td><%= @user.skills.map(&:name).join(", ") %></td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
   </tbody>
 </table>
         <div class="card-header">
