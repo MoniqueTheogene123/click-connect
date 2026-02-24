@@ -1,0 +1,16 @@
+<div id="<%= dom_id skill %>" class="skill-card">
+  <p>
+    <strong>Name:</strong>
+    <%= skill.name.titleize %>
+  </p>
+
+  <%# TODO: add list group bootstrap style %>
+  <ul>
+    <% User.with_skill(skill).each do |user| %>
+      <%# TODO: link to user profile page once implemented %>
+      <li>
+        <%= link_to user.full_name, profile_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

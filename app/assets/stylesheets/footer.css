@@ -1,0 +1,47 @@
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #1e4f8a 0%, #123a64 100%);
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+    border-top: 4px solid #ffc107;
+}
+
+.footer .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(42, 42, 202);
+}
+
+.footer .logo i {
+    color: #ffc107;
+    margin-right: 0.5rem;
+}
+
+.footer .custom-domain {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+.footer .custom-domain a:hover {
+    color: #ffc107;
+    border-bottom-color: #ffc107;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+    transform: translateY(-2px);
+}
+
+.footer-links .fa-linkedin {
+    font-size: 1.3rem;
+}

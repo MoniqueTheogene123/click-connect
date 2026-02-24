@@ -148,6 +148,8 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    faker (3.6.0)
+      i18n (>= 1.8.11, < 2)
     faraday (2.12.2)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -279,6 +281,9 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     pg (1.5.9)
+    pg_search (2.3.7)
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -508,12 +513,14 @@ DEPENDENCIES
   devise
   dotenv
   draft_generators (~> 0.0.5)
+  faker
   grade_runner (~> 0.0.15)
   haikunator
   htmlbeautifier
   http
   importmap-rails
   pg (~> 1.1)
+  pg_search
   propshaft
   pry-rails
   puma (>= 5.0)

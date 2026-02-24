@@ -1,0 +1,56 @@
+<%# app/views/profiles/show.html.erb %>
+<div class="profile-header">
+  <div class="profile-header-content">
+    <div class="profile-avatar-large">
+      <% if @user.profile_image_url.present? %>
+        <%= image_tag @user.profile_image_url, alt: @user.full_name, class: "avatar-large-img" %>
+      <% else %>
+        <div class="avatar-large-placeholder">
+          <%= @user.full_name&.first || @user.username&.first || "U" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="profile-title-info">
+      <h1><%= @user.full_name || @user.username %></h1>
+      
+      <p class="join-date">
+        <i class="fas fa-calendar"></i> 
+        Joined <%= @user.created_at.strftime("%B %Y") %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="profile-bio-section">
+  <h2>About</h2>
+  <p class="bio-text"><%= @user.bio.presence || "No bio provided." %></p>
+</div>
+
+<div class="profile-content-grid">
+  <%# Left Column %>
+  <div class="profile-left-column">
+    
+    
+  <%# Right Column %>
+  <div class="profile-right-column">
+    
+    <%# Skills Section %>
+    <div class="profile-section">
+      <h2>Skills</h2>
+      <% if @user.skills.present? && @user.skills.any? %>
+        <ul>
+          <% @user.skills.each do |skill| %>
+            <li>
+              <%= link_to skill.name.titleize, skill_path(skill) %>  
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="no-data">No skills listed.</p>
+      <% end %>
+    </div>
+  
+    
+  </div>
+</div>

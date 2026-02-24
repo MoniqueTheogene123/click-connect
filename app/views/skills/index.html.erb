@@ -1,0 +1,30 @@
+ <% content_for :title, "Skills" %>
+
+
+<%= search_form_for @q do |f| %>
+
+  <div>
+    <%= f.label :name_cont, "Search by Skill" %>
+    <%= f.text_field :name_cont, :placeholder => "ex: ruby" %>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+  
+  <a href="/skills">Clear filters</a>
+  </div>
+  <br>
+<% end %>
+
+<%# TODO: Add a search bar to filter skills by name. %>
+<h1>Skills</h1>
+
+<div id="skills">
+  <ul>
+    <% @skills.each do |skill| %>
+      <li>
+        <%= link_to skill.name, skill %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Add a New skill", new_skill_path %>
