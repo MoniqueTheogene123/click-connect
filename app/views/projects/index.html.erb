@@ -1,16 +1,30 @@
- 
+ <% content_for :title, "Projects" %>
 
-<% content_for :title, "Projects" %>
 
+<%= search_form_for @q do |f| %>
+
+  <div>
+    <%= f.label :title_cont, "Search by Project Title" %>
+    <%= f.text_field :title_cont, :placeholder => "ex: ruby" %>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+  
+  <a href="/skills">Clear filters</a>
+  </div>
+  <br>
+<% end %>
+
+<%# TODO: Add a search bar to filter skills by name. %>
 <h1>Projects</h1>
 
 <div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li>
+        <%= link_to project.title, project %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
-<%= link_to "New project", new_project_path %>
+<%= link_to "Add a New Project", new_project_path %>
