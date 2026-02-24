@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Resourceful routes
   resources :user_skills
   resources :user_projects
+  resourses :users_profiles
   resources :projects
   resources :skills
   resources :profiles
