@@ -440,18 +440,22 @@
                 </div>
 
     <div class="card-body">
- <table class="table">
-  <thead>
+        <thead>
     <tr>
-      <th scope="col">Skills</th>
+      <th scope="col">My Skills</th>
     </tr>
   </thead>
+ <table class="table">
+  
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><%= @user.skills.map(&:name).join(", ") %></td>
-    </tr>
-    <tr>
+<div class="skills-container">
+  <span class="skill-tag blue">Networking</span>
+  <span class="skill-tag green">Problem Solving</span>
+  <span class="skill-tag purple">Ruby</span>
+  <span class="skill-tag amber">C++</span>
+  <span class="skill-tag rose">GitHub</span>
+  <span class="skill-tag blue">Self-motivated</span>
+</div>
   </tbody>
 </table>
         <div class="card-header">
