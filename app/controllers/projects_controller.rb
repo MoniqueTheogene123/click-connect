@@ -5,10 +5,6 @@ class ProjectsController < ApplicationController
   def index
     @q = Project.ransack(params[:q])
     @projects = @q.result
-
-    @breadcrumbs = [
-      { content: "Projects", href: projects_path }
-    ]
   end
 
   # GET /projects/1
