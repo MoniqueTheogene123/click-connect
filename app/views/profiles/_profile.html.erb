@@ -32,33 +32,6 @@
     </div>
   </div>
 
-  <!-- Projects section added here -->
-  <div class="card-body">
-    <p style="font-size: 0.8rem; color: #666; margin-bottom: 8px;"><%= user.full_name %>'s Projects:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-      <% user.projects.first(3).each do |project| %>
-        <span style="
-          background: #f0fff4;
-          color: #2e9e6b;
-          border: 1px solid #b2dfcf;
-          border-radius: 20px;
-          padding: 3px 10px;
-          font-size: 0.75rem;
-          font-weight: 500;
-        "><%= project.title %></span>
-      <% end %>
-      <% if user.projects.count > 3 %>
-        <span style="
-          background: #f5f5f5;
-          color: #888;
-          border: 1px solid #ddd;
-          border-radius: 20px;
-          padding: 3px 10px;
-          font-size: 0.75rem;
-        ">+ <%= user.projects.count - 3 %> more</span>
-      <% end %>
-    </div>
-  </div>
 
   <div class="card-body">
     <%= link_to "View Profile", profile_path(user), class: "card-link" %>
