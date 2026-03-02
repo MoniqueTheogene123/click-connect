@@ -5,28 +5,37 @@
   flex-wrap: wrap;
   margin: -10px;
   padding: 20px;
-  justify-content: center; /* Center cards if they don't fill the width */
+  justify-content: center;
+  align-items: stretch; /* Makes all cards the same height */
 }
 
 .profiles-grid > * {
-  flex: 0 0 calc(30% - 20px); /* Reduced from 33.333% */
+  flex: 0 0 calc(30% - 20px);
   margin: 10px;
   box-sizing: border-box;
+  display: flex; /* Needed for stretch to work */
 }
 
-/* Optional: Add a min-width to prevent cards from getting too small */
-.profile-card {
+.profile-card, .card {
   min-width: 200px;
+  display: flex;
+  flex-direction: column; /* Stacks card content vertically */
+  width: 100%;
+}
+
+/* Pushes the View Profile link to the bottom of every card */
+.card .card-body:last-child {
+  margin-top: auto;
 }
 
 @media (max-width: 992px) {
   .profiles-grid > * {
-    flex: 0 0 calc(45% - 20px); /* Adjusted for medium screens */
+    flex: 0 0 calc(45% - 20px);
   }
 }
 
 @media (max-width: 576px) {
   .profiles-grid > * {
-    flex: 0 0 calc(100% - 20px); /* Full width on mobile */
+    flex: 0 0 calc(100% - 20px);
   }
 }
