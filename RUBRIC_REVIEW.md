@@ -1,11 +1,11 @@
 # SDF Final Project Rubric - Technical
 
 - Date/Time: 2026-03-04
-- Trainee Name: (not specified)
+- Trainee Name: Monique Theogene
 - Project Name: Click Connect
-- Reviewer Name: Claude Code
-- Repository URL: Needs verification (local repo; GitHub URL not confirmed)
-- Feedback Pull Request URL: Needs verification
+- Reviewer Name: Claude Code, Ian Heraty, Adolfo Nava
+- Repository URL: <https://github.com/MoniqueTheogene123/click-connect>
+- Feedback Pull <https://github.com/MoniqueTheogene123/click-connect/pull/5>
 
 ---
 
