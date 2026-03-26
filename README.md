@@ -1,3 +1,4 @@
+# rails-8-template
 # Click Connect Functional Specification
 
 * An application to help employees find co-workers with specific skills. "Facebook for work"
